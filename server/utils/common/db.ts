@@ -1,5 +1,5 @@
-import { db } from "~/server/db";
-import * as schema from "~/server/db/schema";
+import { db } from "~~/server/db";
+import * as schema from "~~/server/db/schema";
 
 
 export const tables = schema;

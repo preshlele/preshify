@@ -20,7 +20,7 @@ export const sendTemplatedEmail = async ({
     secure: true,
     auth: {
       user: process.env.SMTP_USER,//todo: add to env
-      pass: process.env.SMTP_PASS,//todo: add to env
+      pass: process.env.SMTP_PASSWORD,//todo: add to env
     },
   });
 
@@ -30,7 +30,7 @@ export const sendTemplatedEmail = async ({
   const html = compiledTemplate(context);
 
   await transporter.sendMail({
-    from: "no-reply@preshify.com",
+    from: process.env.SMTP_FROM_EMAIL,
     to,
     subject,
     html,
