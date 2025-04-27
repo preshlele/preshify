@@ -11,8 +11,8 @@ definePageMeta({
   <div>
     <ul>
       <li>
-        <NuxtLink to="/orders">Orders</NuxtLink>
-        <NuxtLink to="/">Logout</NuxtLink>
+        <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/orders">Orders</NuxtLink>
+        <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/">Logout</NuxtLink>
       </li>
     </ul>
     Dashboard Page

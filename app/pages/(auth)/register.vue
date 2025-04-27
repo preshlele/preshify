@@ -12,8 +12,8 @@ definePageMeta({
     Register Page
     <ul>
         <li>
-            <NuxtLink to="/">Home</NuxtLink>
-            <NuxtLink to="/login">Login</NuxtLink>
+            <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/">Home</NuxtLink>
+            <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/login">Login</NuxtLink>
         </li>
     </ul>
   </div>

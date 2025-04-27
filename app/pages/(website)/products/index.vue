@@ -12,9 +12,9 @@ definePageMeta({
     View all products
     <ul>
         <li>
-            <NuxtLink to="/products/GRTDEVEF">Top Perfume</NuxtLink>
-            <NuxtLink to="/login">Login</NuxtLink>
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/products/GRTDEVEF">Top Perfume</NuxtLink>
+            <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/login">Login</NuxtLink>
+            <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/">Home</NuxtLink>
         </li>
     </ul>
   </div>
