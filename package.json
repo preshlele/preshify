@@ -8,10 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
     "drizzle-orm": "^0.42.0",
     "handlebars": "^4.7.8",
     "nodemailer": "^6.10.1",
@@ -21,7 +22,8 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.10",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/node": "^22.15.2",
     "@types/nodemailer": "^6.4.17",
     "@types/pg": "^8.11.13",
     "drizzle-kit": "^0.31.0"
