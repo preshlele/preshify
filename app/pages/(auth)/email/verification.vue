@@ -2,6 +2,10 @@
 useHead({
   title: "Email Verification",
 });
+
+definePageMeta({
+  layout: "auth",
+});
 </script>
 <template>
   <div>

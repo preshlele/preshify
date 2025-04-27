@@ -2,6 +2,10 @@
 useHead({
   title: "All Products",
 });
+
+definePageMeta({
+  layout: "website",
+});
 </script>
 <template>
   <div>

@@ -2,6 +2,10 @@
 useHead({
   title: "Dashboard",
 });
+
+definePageMeta({
+  layout: "customers",
+});
 </script>
 <template>
   <div>

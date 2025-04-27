@@ -2,6 +2,9 @@
 useHead({
   title: "Login",
 });
+definePageMeta({
+  layout: "auth",
+});
 </script>
 <template>
   <div>

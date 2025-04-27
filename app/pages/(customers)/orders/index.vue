@@ -2,6 +2,10 @@
 useHead({
   title: "All Orders",
 });
+
+definePageMeta({
+  layout: "customers",
+});
 </script>
 <template>
   <div>
