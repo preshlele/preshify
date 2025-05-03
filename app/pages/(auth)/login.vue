@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import Form from '~/components/auth/login/form.vue';
+
 useHead({
   title: "Login",
 });
@@ -6,20 +8,18 @@ definePageMeta({
   layout: "auth",
 });
 
-const { loggedIn, user, session, fetch, clear, openInPopup } = useUserSession();
+const { loggedIn, user, session, fetch, clear, openInPopup} = useUserSession();
 </script>
 <template>
   <div>
     Login Page
-
-    <div v-if="loggedIn">
-      <h1>Welcome {{ user.name }}!</h1>
-      <pre>{{ user }}</pre>
-      <p>Logged in since {{ session.loggedInAt }}</p>
-      <button class="cursor-pointer text-white font-bold p-4 bg-red-800" @click="clear">Logout</button>
-    </div>
-    <button v-else class="cursor-pointer text-white font-bold p-4 bg-red-800" @click="openInPopup('/auth/google')">Login with Google</button>
-
+    <a
+      class="cursor-pointer text-white font-bold p-4 bg-red-800"
+      href="/auth/google"
+    >
+      Let's google
+    </a>
+    <Form />
     <ul>
       <li>
         <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/register"

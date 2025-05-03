@@ -5,10 +5,9 @@ useHead({
 
 definePageMeta({
   layout: "auth",
+  middleware: "auth",
 });
 </script>
 <template>
-  <div>
-    Email Verification Page
-  </div>
+  <div>Email Verification Page</div>
 </template>
