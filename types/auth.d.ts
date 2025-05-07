@@ -9,6 +9,7 @@ declare module '#auth-utils' {
         avatar: string;
         role: Role;
         provider: Provider;
+        emailVerified: boolean;
     }
 
     interface UserSession {

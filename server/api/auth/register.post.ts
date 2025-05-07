@@ -1,8 +1,10 @@
 import { eq } from "drizzle-orm";
-import { Provider, Role } from "../../../enums/auth";
+
+import { Provider, Role } from "~~/enums/auth";
+import { registerSchema } from '~~/schemas/common/auth';
 
 export default defineEventHandler(async (event) => {
-  const { name, email, password } = await readBody(event)
+  const { name, email, password } = await readValidatedBody(event, registerSchema.parse)
 
   try {
     // Find user
@@ -32,7 +34,7 @@ export default defineEventHandler(async (event) => {
       })
       .returning();
 
- 
+
     if (!newUser) {
       return sendError(event, createError({
         statusCode: 400,
@@ -42,14 +44,15 @@ export default defineEventHandler(async (event) => {
 
     // Send confirmation email
 
-    await setUserSession(event, {
+    await replaceUserSession(event, {
       user: {
         id: newUser.id,
         email: newUser.email,
         name: newUser.name,
         avatar: newUser.avatar,
         role: newUser.role,
-        provider: newUser.provider
+        provider: newUser.provider,
+        emailVerified: false
       },
       loggedInAt: new Date()
     });

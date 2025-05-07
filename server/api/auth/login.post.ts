@@ -1,8 +1,9 @@
 import { eq } from "drizzle-orm";
+import { loginSchema } from "~~/schemas/common/auth";
 
 export default defineEventHandler(async (event) => {
 
-  const { email, password, remember } = await readBody(event)
+  const { email, password, remember } = await readValidatedBody(event, loginSchema.parse)
 
   try {
     // Find user
@@ -20,14 +21,15 @@ export default defineEventHandler(async (event) => {
     }
 
     // Create session (using Nuxt's built-in session or your own solution)
-    await setUserSession(event, {
+    await replaceUserSession(event, {
       user: {
         id: user.id,
         email: user.email,
         name: user.name,
         avatar: user.avatar,
         role: user.role,
-        provider: user.provider
+        provider: user.provider,
+        emailVerified: !!user.emailVerifiedAt
       },
       loggedInAt: new Date()
     });
