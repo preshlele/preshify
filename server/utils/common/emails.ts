@@ -19,8 +19,8 @@ export const sendTemplatedEmail = async ({
     port: 465,
     secure: true,
     auth: {
-      user: process.env.SMTP_USER,//todo: add to env
-      pass: process.env.SMTP_PASSWORD,//todo: add to env
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
 
