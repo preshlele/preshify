@@ -41,13 +41,15 @@ export default defineEventHandler(async (event) => {
 
     const config = useRuntimeConfig();
 
+    const verificationUrl = `${config.public.baseUrl}/email/verify?token=${token}`;
+
     await tasks.trigger<typeof sendMailTask>(
       'tasks/send-mail',
       {
         to: email,
         subject: 'Verify your email address',
         template: 'auth/email/verification',
-        data: { name: authUser?.name, token, baseUrl: config.public.baseUrl }
+        data: { name: authUser?.name, verificationUrl }
       }
     );
 
