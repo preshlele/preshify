@@ -7,6 +7,6 @@ export const sayHelloTask = task({
     queue: defaultQueue,
     run: async (payload: { name: string }, { ctx }) => {
         const {name} = payload;
-        logger.log("Hello: ", {name, ctx});
+        logger.log("Hello: ", { name });
     },
 });

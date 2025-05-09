@@ -9,10 +9,10 @@ export const sendSmsTask = task({
     run: async (payload: { recipients: string[], message: string }, { ctx }) => {
         const { recipients, message } = payload;
 
-        logger.log("Sending sms to these recipients: ", { recipients, ctx });
+        logger.log("Sending sms to these recipients: ", { recipients });
 
         const res = await sendSms(recipients, message);
 
-        logger.log("Sms sent to recipients with response: ", { res, ctx });
+        logger.log("Sms sent to recipients with response: ", { res });
     },
 });

@@ -14,10 +14,10 @@ export const sayHelloCron = schedules.task({
         const distanceInMs =
             payload.timestamp.getTime() - (payload.lastTimestamp ?? new Date()).getTime();
 
-        logger.log("First scheduled tasks", { payload, distanceInMs, ctx });
+        logger.log("First scheduled tasks", { payload, distanceInMs });
 
         const handle = await tasks.trigger<typeof sayHelloTask>('tasks/say-hello', { name: "Presh" });
-        logger.log("Say Hello Job is running with handle", { handleId: handle.id, ctx });
+        logger.log("Say Hello Job is running with handle", { handleId: handle.id });
 
         // Wait for 5 seconds
         await wait.for({ seconds: 5 });

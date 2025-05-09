@@ -9,7 +9,7 @@ export const sendMailTask = task({
     run: async (payload: { to: string, subject: string, template: string, data: Record<string, any> }, { ctx }) => {
         const { to, subject, template, data } = payload;
 
-        logger.log("Sending mail to this email: ", { email: to, ctx });
+        logger.log("Sending mail to this email: ", { email: to });
 
         await sendTemplatedEmail({ to, subject, templateName: template, context: data });
     },
