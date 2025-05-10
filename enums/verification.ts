@@ -1,4 +1,5 @@
 export enum Type {
     Email = 'email',
-    Phone = 'phone'
+    Phone = 'phone',
+    Password = 'password'
 }

@@ -26,7 +26,7 @@ export const verifications = pgTable("verifications", {
   userId: integer('user_id').references(() => users.id),
   identifier: varchar("identifier", { length: 100 }),
   token: varchar("token", { length: 100 }),
-  type: varchar("type", { enum: [Type.Email, Type.Phone], length: 30 }),
+  type: varchar("type", { enum: [Type.Email, Type.Phone, Type.Password], length: 30 }),
   verifiedAt: timestamp("verified_at"),
   expiresAt: timestamp("expires_at"),
   createdAt: timestamp("created_at").defaultNow(),

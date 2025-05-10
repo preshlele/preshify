@@ -9,13 +9,13 @@ export default defineEventHandler(async (event) => {
 
   try {
     const verification = await useDb().query.verifications.findFirst({
-      where: ((verifications, { eq, and, gte }) => and(
+      where: ((verifications, { eq, and, isNull, gte }) => and(
         eq(verifications.token, token),
         eq(verifications.userId, authUser?.id!),
         eq(verifications.type, Type.Email),
-        gte(verifications.expiresAt, new Date())
-      )
-      )
+        gte(verifications.expiresAt, new Date()),
+        isNull(verifications.verifiedAt)
+      ))
     });
 
     if (!verification) {
