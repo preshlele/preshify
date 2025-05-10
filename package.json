@@ -10,9 +10,12 @@
     "postinstall": "nuxt prepare",
     "start": "node .output/server/index.mjs",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "trigger:dev": "npx trigger.dev@latest dev",
+    "trigger:deploy": "npx trigger.dev@latest deploy --api-url https://triggerdev.yebi.africa --registry docker.io --namespace adzamkomla --env prod --self-hosted --push --log-level debug\n"
   },
   "dependencies": {
+    "@trigger.dev/sdk": "^3.3.17",
     "@vee-validate/zod": "^4.15.0",
     "drizzle-orm": "^0.42.0",
     "handlebars": "^4.7.8",
@@ -27,6 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "@trigger.dev/build": "^3.3.17",
     "@types/node": "^22.15.2",
     "@types/nodemailer": "^6.4.17",
     "@types/pg": "^8.11.13",
