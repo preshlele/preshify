@@ -2,13 +2,7 @@
 useHead({
   title: "Reset Password",
 });
-
-definePageMeta({
-  layout: "auth",
-});
 </script>
 <template>
-  <div>
-    Reset Password Page
-  </div>
+  <div>Reset Password Page</div>
 </template>
