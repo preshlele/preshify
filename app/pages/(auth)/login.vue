@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import Form from '~/components/auth/login/form.vue';
+
 useHead({
   title: "Login",
 });
@@ -18,6 +20,8 @@ const showPassword = ref(false);
 const handleLogin = () => {
   console.log(formData.value, "register data");
 };
+
+const { loggedIn, user, session, fetch, clear, openInPopup} = useUserSession();
 </script>
 
 <template>
