@@ -4,11 +4,12 @@ useHead({
 });
 definePageMeta({
   layout: "admin",
+  middleware: "auth",
 });
 </script>
 <template>
   <div>
-     <ul>
+    <ul>
       <li>
         <NuxtLink class="mx-3 text-cyan-800 font-bold" to="/">Logout</NuxtLink>
       </li>

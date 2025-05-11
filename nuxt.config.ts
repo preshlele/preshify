@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
 
+
   devtools: {
     enabled: true,
     timeline: {
@@ -16,7 +17,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appUrl: process.env.APP_URL,
-    }
+    },
   },
 
   router: {
@@ -44,5 +45,7 @@ export default defineNuxtConfig({
     prefix: '',
 
     componentDir: './components/ui',
-  }
+  },
+
+  modules: ['nuxt-auth-utils']
 })
